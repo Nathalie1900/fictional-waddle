@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+
+                let incorrects = document.querySelectorAll('.incorrect');
+
+                for (incorrect of incorrects) {
+                    incorrect.addEventListener('click', function() {
+                        incorrect.style.backgroundColor = 'Red';
+                        incorrect.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                    });
+                }
+
+                let correct = document.querySelector('.correct')
+
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = 'Green';
+                    correct.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                });
+
+                document.querySelector('#check').addEventListener('click', function() {
+                    let input = document.querySelector('input');
+
+                    if (input.value === 'Feeling This') {
+                        input.style.backgroundColor = 'green';
+                        input.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        input.parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
+                    }
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>¿Which Guitar Hero is the best?</h3>
+                <button class="incorrect">Guitar Hero 2</button>
+                <button class="correct">Guitar Hero 3: Legends of Rock</button>
+                <button class="incorrect">Guitar Hero: Warriors of Rock</button>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>Which is the best blink-182 song?</h3>
+                <input autocomplete=off answer="answer" placeholder="Write your answer here">
+                <button id="check">Confirm answer</button>
+                <p class="feedback"></p>
+            </div>
+        </div>
+    </body>
+
+</html>

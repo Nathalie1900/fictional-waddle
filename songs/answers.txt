@@ -1,0 +1,4 @@
+If songs.db contains the top 100 songs of one listener from 2018, how would you characterize their audio aura?
+Answer: The average energy being 0.66, average valence 0.48 and average danceability 0.72, I would characterize their audio aura as being very vibrant and colorful.
+Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
+Answer: I would propose to split the calculation, by ordering the songs by energy, valence and danceability (one at a time), and then getting the average for just the 50 lowest and then the 50 highest, so we don't loose so much of the extremes, possibly creating an aura that has an interesting duality

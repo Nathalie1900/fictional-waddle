@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote Data
+{% endblock %}
+
+{% block main %}
+    <h3>Current Cash Balance: {{ user_cash | usd }}</h3>
+    <h3>Grand Total: {{ (total_cash_stocks+user_cash) | usd}}</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>Number of Shares</th>
+                <th>Current Price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+                {% for session in session_symbols %}
+            <tr>
+                <td>{{ session.symbol }}</td>
+                <td>{{ session.shares }}</td>
+                <td>{{ session.price | usd }}</td>
+                <td>{{ session.total | usd }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
